@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props, context);
     this.state = {
       now: Date.now(),
-      data:[{id:1,text:'todolist1',competed:false},{id:2,text:'todolist2',competed:true}]
+      
     }
   }
   render() {
