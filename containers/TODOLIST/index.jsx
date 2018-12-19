@@ -7,19 +7,37 @@ class TODOLIST extends React.Component{
     constructor(props, context){
         super(props, context);
         this.state={
-            data:[{id:1,text:'todolist1',competed:false},{id:2,text:'todolist2',competed:true}]
+            todos:[{id:0,text:'todolist1',completed:false},{id:1,text:'todolist2',completed:true}],
         }
     }
-    addtodo(id,text,competed){
-        this.state.data.push({id:1,text:'todolist3',competed:false});
-        console.log('index的',id,text,competed);
+    addtodo(text,completed){
+        let todoId=this.state.todos.length;
+        this.setState({
+            todos:[...this.state.todos,{
+                id:todoId,
+                text:text,
+                completed:completed
+            }],
+        })
     }
+
+    handleclick(index){
+        this.setState({
+            todos:this.state.todos.map((e)=>{
+                if(e.id===index){
+                    e.completed=!e.completed;
+                }
+                return e;
+            })
+        })
+    }
+
     render(){
         return(
             <div>
-                <p>aaaa</p>
+                <p>write down your plan</p>
               <AppInput addtodo={this.addtodo.bind(this)}/>
-              <AppList data={this.state.data}/>
+              <AppList tododata={this.state.todos} handleclick={this.handleclick.bind(this)}/>
             </div>
         )
     }

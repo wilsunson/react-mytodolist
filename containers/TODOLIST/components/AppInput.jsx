@@ -18,8 +18,7 @@ class AppInput extends React.Component{
     }
     addto(e){
       if(e.which==13){
-          console.log('enter');
-          this.props.addtodo(1,this.state.value,false);
+          this.props.addtodo(this.state.value,false);
            this.setState({
             value:''
         })
