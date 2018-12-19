@@ -6,10 +6,19 @@ module.exports={
     module: {
         loaders: [
           {
-            test: /\.jsx?$/,
+            test: /\.(js|jsx)?$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'        
-          }, 
+            loader: 'babel-loader' ,
+            options:{
+              plugins:[
+                
+              ]
+            }       
+          }, {
+            test:/\.css$/,
+            exclude: /node_modules/,
+            loader:'css-loader'
+          }
         ]
       },
       devtool: 'cheap-source-map',

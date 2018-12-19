@@ -1,8 +1,8 @@
 import React from 'react';
 import AppInput from './components/AppInput.jsx';
 import AppList from './components/AppList.jsx';
-
-
+import {Button} from 'antd'
+ 
 class TODOLIST extends React.Component{
     constructor(props, context){
         super(props, context);
@@ -35,7 +35,9 @@ class TODOLIST extends React.Component{
     render(){
         return(
             <div>
-                <p>write down your plan</p>
+                <p>write down your plan</p>  
+                <Button type="primary">asdasdsa</Button>
+                <Button type="danger">asdasdsa</Button>
               <AppInput addtodo={this.addtodo.bind(this)}/>
               <AppList tododata={this.state.todos} handleclick={this.handleclick.bind(this)}/>
             </div>

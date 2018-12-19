@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TODOLIST from './containers/TODOLIST/index.jsx'
+import "antd/dist/antd.css";
 
 class App extends React.Component {
 
