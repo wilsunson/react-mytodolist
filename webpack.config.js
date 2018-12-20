@@ -11,13 +11,16 @@ module.exports={
             loader: 'babel-loader' ,
             options:{
               plugins:[
-                
+                ["import", {
+                  "libraryName": "antd",
+                  "libraryDirectory": "es",
+                  "style": "css" // `style: true` 会加载 less 文件
+              }]
               ]
             }       
           }, {
             test:/\.css$/,
-            exclude: /node_modules/,
-            loader:'css-loader'
+            loader:'style-loader!css-loader'  
           }
         ]
       },
