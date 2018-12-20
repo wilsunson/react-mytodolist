@@ -1,3 +1,17 @@
+#app{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.app-container{
+    margin: 100px auto;
+}
+
+
 .disClass{
     text-decoration:line-through
+}
+
+.showIcon{
+    display: none;
 }
