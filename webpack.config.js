@@ -3,8 +3,12 @@ module.exports={
     output:{
         filename:'./bundle.js'
     },
+    devServer:{
+      inline:true,
+      port:8080,
+    },
     module: {
-        loaders: [
+        rules: [
           {
             test: /\.(js|jsx)?$/,
             exclude: /node_modules/,
